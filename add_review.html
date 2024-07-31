@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Review</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Review</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="images/icon.png" type="image/png">
 </head>
+
 <body>
-    <main>
-        <form id="review-form">
-            <h2>Add a Review</h2>
-            <label for="place">Place:</label>
-            <input type="text" id="place" name="place" readonly>
-            
-            <label for="review">Review:</label>
-            <textarea id="review" name="review" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-    <script src="scripts.js"></script>
+  <header>
+    <img src="images/logo.png" class="logo" alt="Logo">
+    <nav>
+      <ul>
+        <li><a id="home" href="index.html">Home</a></li>
+        <li><a href="login.html" id="login-link">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="add-review">
+      <h2>Add a Review</h2>
+      <form id="review-form" class="form">
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" name="review-text" required></textarea>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" required>
+          <option value="" disabled selected>Select a rating</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Star</option>
+        </select>
+
+        <button type="submit" class="add-review">Submit</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 YourCompanyName. All rights reserved.</p>
+  </footer>
+  <script src="scripts.js"></script>
 </body>
+
 </html>
