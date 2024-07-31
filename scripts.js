@@ -38,18 +38,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Function to make the login API request
+  async function loginUser(email, password) {
+    // Send a POST request to the login endpoint with the email and password
+    const response = await fetch("http://127.0.0.1:5000/login", {
+      method: "POST", // Use the POST method
+      headers: {
+        "Content-Type": "application/json", // Set the Content-Type header to JSON
+      },
+      body: JSON.stringify({ email, password }), // Convert the email and password to a JSON string
+    });
+
+    return response; // Return the response object
+  }
+
+  // closing the event of dom loading here
 });
-
-// Function to make the login API request
-async function loginUser(email, password) {
-  // Send a POST request to the login endpoint with the email and password
-  const response = await fetch("http://127.0.0.1:5000/login", {
-    method: "POST", // Use the POST method
-    headers: {
-      "Content-Type": "application/json", // Set the Content-Type header to JSON
-    },
-    body: JSON.stringify({ email, password }), // Convert the email and password to a JSON string
-  });
-
-  return response; // Return the response object
-}
