@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (response.ok) {
       const data = await response.json();
-      Cookies.set("token", data.access_token, { path: "/" });
+      document.cookie = `token=${data.access_token}; path=/;`;
       window.location.href = "index.html";
     } else {
       alert("Login failed: " + response.statusText);
